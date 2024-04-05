@@ -57,20 +57,20 @@ void loop() {
     int i;
     char *p;
     char string[128];
-    String words[3];
+    String colors[3];
 
     color.toCharArray(string, sizeof(string));
     i = 0;
     p = strtok(string, delimiter);
     while(p && i < 3) {
-      words[i] = p;
+      colors[i] = p;
       p = strtok(NULL, delimiter);
       ++i;
     }
 
-    WiFiDrv::analogWrite(25, words[0].toInt());
-    WiFiDrv::analogWrite(26, words[1].toInt());
-    WiFiDrv::analogWrite(27, words[2].toInt());
+    WiFiDrv::analogWrite(25, colors[0].toInt());
+    WiFiDrv::analogWrite(26, colors[1].toInt());
+    WiFiDrv::analogWrite(27, colors[2].toInt());
 
     stream.clear();
   }
